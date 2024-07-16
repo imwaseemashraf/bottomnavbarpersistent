@@ -37,9 +37,12 @@ class _HomeScreenState extends State<HomeScreen> {
   };
 
   final List<Widget> _screens = [
-    ScreenNavigator(key: GlobalKey<NavigatorState>(), screen: ScreenOne()),
-    ScreenNavigator(key: GlobalKey<NavigatorState>(), screen: ScreenTwo()),
-    ScreenNavigator(key: GlobalKey<NavigatorState>(), screen: ScreenThree()),
+    ScreenNavigator(
+        key: GlobalKey<NavigatorState>(), screen: const ScreenOne()),
+    ScreenNavigator(
+        key: GlobalKey<NavigatorState>(), screen: const ScreenTwo()),
+    ScreenNavigator(
+        key: GlobalKey<NavigatorState>(), screen: const ScreenThree()),
   ];
 
   void _onItemTapped(int index) {
@@ -103,6 +106,8 @@ class ScreenNavigator extends StatelessWidget {
 }
 
 class ScreenOne extends StatelessWidget {
+  const ScreenOne({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -113,13 +118,15 @@ class ScreenOne extends StatelessWidget {
             MaterialPageRoute(builder: (context) => const HomePage()),
           );
         },
-        child: Text('Screen One'),
+        child: const Text('Screen One'),
       ),
     );
   }
 }
 
 class ScreenTwo extends StatelessWidget {
+  const ScreenTwo({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Center(
@@ -129,6 +136,8 @@ class ScreenTwo extends StatelessWidget {
 }
 
 class ScreenThree extends StatelessWidget {
+  const ScreenThree({super.key});
+
   @override
   Widget build(BuildContext context) {
     return const Center(
